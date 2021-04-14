@@ -3,6 +3,10 @@ The notes from the tutorials/online lectures and courses I followed along with a
 
 ## Links
 
+### Server
+
+- [Setting up SSH Key for Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804)
+
 ### Github
 
 - [Rebase a forked repo](https://medium.com/@topspinj/how-to-git-rebase-into-a-forked-repo-c9f05e821c8a)
