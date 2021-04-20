@@ -34,7 +34,28 @@ $ sudo lshw -C display
 
 ### Remove Everything
 - Remove NVIDIA Drivers
-- Remove Cuda
+#### Remove Cuda
+- Go to appropriate cuda file you have in your system (Should be located in ```/usr/local/``` with name i.e. ```cuda-10.0``` for cuda version 10.0), and go to ```bin/``` run ```cuda-uninstaller```
+```bash
+cd /usr/local/cuda-10.0/bin
+chmod +x cuda-uninstaller
+sudo ./cuda-uninstaller
+```
+- If you can't locate or want to do it manually
+```bash
+sudo apt-get remove nvidia-cuda-toolkit
+sudo apt-get remove --auto-remove nvidia-cuda-toolkit
+sudo apt-get purge nvidia-cuda-toolkit
+sudo apt-get purge --auto-remove nvidia-cuda-toolkit
+sudo rm -rf /opt/cuda
+sudo rm -rf ~/NVIDIA_GPU_Computing_SDK
+```
+- Remove the lines 
+```bash
+export PATH=$PATH:/opt/cuda/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib:/opt/cuda/lib64
+```
+from ```~/.bash_profile``` and/or ```~/.bashrc```
 
 ### Install NVIDIA
 - Go to [Nvidia website](https://www.nvidia.com/en-us/drivers/unix/) and get the latest *Latest Production Branch Version* link. For me it is **https://us.download.nvidia.com/XFree86/Linux-x86_64/460.73.01/NVIDIA-Linux-x86_64-460.73.01.run**
